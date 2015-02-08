@@ -25,7 +25,9 @@ if (!isset($_POST['valider'])) {
         echo "'$mot' trouvé $nb fois :";
         echo '<ul>';
         foreach ($resultats as $v) {
-            echo "<li>$v</li>";
+          $recupadd = explode(";", $v);
+ echo "<li>$recupadd[5]</li>"; 
+                      echo "<a href=\"$recupadd[10]\">$recupadd[4]</a>";
         }
         echo '</ul>';
     } else {
