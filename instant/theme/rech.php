@@ -5,8 +5,10 @@ if (!isset($_POST['valider'])) {
 ?>
 
 <form method="POST">
-    Entrez le nom de la ville, code postal, rue ou coordonnées de l'hôtel: <input type="text" name="mot" value=""/><br/>
-    <input type="submit" value="valider" name="valider"/>
+<center>   
+ Entrez le nom de la ville, code postal, rue ou coordonnées de l'hôtel: <input type="text" name="mot" value=""/><br/>
+   <input type="submit" value="Rechercher" name="valider"/>
+</center>
 </form>
  
 <?php
@@ -22,7 +24,7 @@ if (!isset($_POST['valider'])) {
     fclose($fp);
     $nb = count($resultats);
     if ($nb > 0) {
-        echo "'$mot' trouvé $nb fois :";
+        echo " $nb hotels trouves :";
         echo '<ul>';
         foreach ($resultats as $v) {
           $recupadd = explode(";", $v);
@@ -35,14 +37,14 @@ if (!isset($_POST['valider'])) {
     }
 }
 ?>
+<center>
 <div id="map-canvas" style="width: 480px; height: 480px;"></div> <!-- MAP -->
-
-
+</center>
 <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTiXwumKDxQssmTTC8lLI2Q5Y6aXHRj2U">
     </script>
-    <script type="text/javascript">
-    var geocoder;
+    <script type="text/javascript">    
+var geocoder;
 var map;
 function initialize() {
   geocoder = new google.maps.Geocoder();
