@@ -73,7 +73,7 @@
 	</div>
 
 
-	<div id="social">
+<!--	<div id="social">
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-2">

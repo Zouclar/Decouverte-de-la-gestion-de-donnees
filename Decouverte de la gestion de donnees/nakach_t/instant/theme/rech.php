@@ -3,8 +3,9 @@ define('FICHIER', 'hotel.csv');
  
 if (!isset($_POST['valider'])) {
 ?>
+
 <form method="POST">
-    Mot recherché : <input type="text" name="mot" value=""/><br/>
+    Entrez le nom de la ville, code postal, rue ou coordonnées de l'hôtel: <input type="text" name="mot" value=""/><br/>
     <input type="submit" value="valider" name="valider"/>
 </form>
  
@@ -32,3 +33,6 @@ if (!isset($_POST['valider'])) {
     }
 }
 ?>
+<script>
+console.log($v);
+</script>
