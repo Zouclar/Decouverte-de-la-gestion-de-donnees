@@ -24,7 +24,7 @@ if (!isset($_POST['valider'])) {
     fclose($fp);
     $nb = count($resultats);
     if ($nb > 0) {
-        echo " $nb hotels trouves :";
+        echo " $nb hôtels trouvés :";
         echo '<ul>';
         foreach ($resultats as $v) {
           $recupadd = explode(";", $v);
