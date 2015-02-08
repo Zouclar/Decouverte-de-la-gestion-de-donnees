@@ -1,3 +1,4 @@
+<div id="map-canvas" style="width: 480px; height: 480px;"></div>
 <?php
 define('FICHIER', 'hotel.csv');
  
@@ -26,7 +27,7 @@ if (!isset($_POST['valider'])) {
         echo '<ul>';
         foreach ($resultats as $v) {
           $recupadd = explode(";", $v);
- echo "<li>$recupadd[5]</li>"; 
+ echo "<div class="resultat_recherche" >$recupadd[5]</div>"; 
                       echo "<a href=\"$recupadd[10]\">$recupadd[4]</a>";
         }
         echo '</ul>';
@@ -35,6 +36,38 @@ if (!isset($_POST['valider'])) {
     }
 }
 ?>
-<script>
-console.log($v);
-</script>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTiXwumKDxQssmTTC8lLI2Q5Y6aXHRj2U">
+    </script>
+    <script type="text/javascript">
+    var geocoder;
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(48.853410, 2.34880000);
+  var mapOptions = {
+    zoom: 8,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+
+function codeAddress() {
+    var ret = $('.resultat_recherche').each(function(i, obj){
+        var address = obj.innerHTML;
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }); 
+}
+initialize();
+codeAddress();
+    </script>
