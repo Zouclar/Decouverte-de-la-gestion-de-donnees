@@ -1,4 +1,3 @@
-<div id="map-canvas" style="width: 480px; height: 480px;"></div>
 <?php
 define('FICHIER', 'hotel.csv');
  
@@ -27,8 +26,8 @@ if (!isset($_POST['valider'])) {
         echo '<ul>';
         foreach ($resultats as $v) {
           $recupadd = explode(";", $v);
- echo "<div class="resultat_recherche" >$recupadd[5]</div>"; 
-                      echo "<a href=\"$recupadd[10]\">$recupadd[4]</a>";
+                    echo "<li class=\"resultat_recherche\" >$recupadd[5]</li>"; 
+                    echo "<a href=\"$recupadd[10]\">$recupadd[4]</a>";
         }
         echo '</ul>';
     } else {
@@ -36,6 +35,9 @@ if (!isset($_POST['valider'])) {
     }
 }
 ?>
+<div id="map-canvas" style="width: 480px; height: 480px;"></div> <!-- MAP -->
+
+
 <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTiXwumKDxQssmTTC8lLI2Q5Y6aXHRj2U">
     </script>
@@ -71,3 +73,4 @@ function codeAddress() {
 initialize();
 codeAddress();
     </script>
+    <!-- Fin de script map -->
