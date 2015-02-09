@@ -61,22 +61,22 @@
 	     ?> 
 	</div>
 
-	<div id="footerwrap">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-4">
-					<p><b>Localisation wsh</b></p>
-				</div>
-			
-				<div class="col-lg-4">
-					<p>Droits d'auteurs</p>
-				</div>
-				<div class="col-lg-4">
-					<p>Contact</p>
-				</div>
-			</div>
-		</div>
-	</div>
+ <div id="footerwrap">
+   <div class="container">
+     <div class="row centered">
+       <div class="col-lg-4">
+  <a href="localisation.html">Localisation</a>
+       </div>
+       
+       <div class="col-lg-4">
+   <p>© Made by NAKACHE Thomas, CRAMPES Alban, ARGYRE Jean-Elie, DOUSSIN Florian.</p>
+  </div>
+       <div class="col-lg-4">
+   <a href="work.html">Contact</a>
+       </div>
+     </div>
+    </div>
+ </div>
 	
 
   </body>
