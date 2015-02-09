@@ -65,7 +65,7 @@
    <div class="container">
      <div class="row centered">
        <div class="col-lg-4">
-  <a href="localisation.html">Localisation</a>
+  <p>Localisation</p>
        </div>
        
        <div class="col-lg-4">
