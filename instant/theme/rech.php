@@ -30,6 +30,7 @@ if (!isset($_POST['valider'])) {
           $recupadd = explode(";", $v);
                     echo "<li class=\"resultat_recherche\" >$recupadd[5]</li>"; 
                     echo "<a href=\"$recupadd[10]\">$recupadd[4]</a>";
+                    echo "<li class=\"resultat_recherche\" >$recupadd[8]</li>";
         }
         echo '</ul>';
     } else {
